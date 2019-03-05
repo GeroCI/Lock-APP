@@ -1,0 +1,38 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ExtraTranslation">
+    <string name="app_name">LockManage</string>
+
+    <string name="send">发送</string>
+    <string name="edittext_input_hint">说啥类...</string>
+
+    <string name="load_more">加载更多...</string>
+    <string name="all_picture">所有图片</string>
+    <string name="look_up">预览</string>
+    <string name="text_done">完成</string>
+    <string name="text_select">选择</string>
+    <string name="Device">设备: zmd2</string>
+    <string name="Mac">MAC: D6:18:5C:69:03:69</string>
+    <string name="Electorycity">电量:未知 </string>
+    <!--hint 文字-->
+    <string name="hint_input_shuoshuo">这一刻的想法...</string>
+    <string name="Auth_name">名称: </string>
+    <string name="Auth_key">授权钥匙: </string>
+    <string name="Auth_time">2019-02-17</string>
+    <string name="Alarm_type">告警ID: </string>
+    <string name="Alarm_device">告警锁名: </string>
+    <string name="Alarm_time">告警时间: </string>
+    <string name="Log_type">日志类型: </string>
+    <string name="Log_device">日志详细: </string>
+    <string name="Log_time">生成时间: </string>
+    <string name="Account_name">姓名: 驻马店</string>
+    <string name="Account_id">用户名: zmd</string>
+    <string name="Account_area">管理区域: 河南省/驻马店市/市辖区</string>
+    <!--标题类文字-->
+    <string name="list_view">列表视图</string>
+    <string name="map_view">地图视图</string>
+    <string name="remember_psw">记住密码</string>
+    <!--<string name="title_friends">朋友圈</string>-->
+    <string name="title_wechat">锁群管理系统</string>
+    <!--<string name="title_pic_select">图片</string>-->
+    <!--<string name="title_push_shuo">编辑说说</string>-->
+    <string name="todo">TODO</string>
+</resources>

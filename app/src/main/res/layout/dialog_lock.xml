@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white">
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:textSize="20sp"
+        android:textColor="@android:color/holo_green_dark"
+        android:text="705518"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dip"
+        android:background="@android:color/holo_green_dark" />
+
+    <TextView
+        android:id="@+id/lock_door"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/listview_lock_small"
+        android:drawablePadding="25dp"
+        android:paddingLeft="20dp"
+        android:textColor="@android:color/holo_green_dark"
+        android:text="锁1门磁/锁舌：关闭/打开"/>
+    <TextView
+        android:id="@+id/lock_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@drawable/query_green_small"
+        android:textColor="@android:color/holo_green_dark"
+        android:drawablePadding="25dp"
+        android:paddingLeft="22dp"
+        android:text="锁具注册"/>
+    <TextView
+        android:id="@+id/lock_remote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@drawable/key1_green_small"
+        android:textColor="@android:color/holo_green_dark"
+        android:drawablePadding="25dp"
+        android:paddingLeft="22dp"
+        android:text="远程开锁"/>
+    <TextView
+        android:id="@+id/lock_store"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@drawable/store_small"
+        android:textColor="@android:color/holo_green_dark"
+        android:drawablePadding="25dp"
+        android:paddingLeft="22dp"
+        android:text="缓存开锁"/>
+    <TextView
+        android:id="@+id/lock_lanya"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@drawable/lanya_small"
+        android:textColor="@android:color/holo_green_dark"
+        android:drawablePadding="25dp"
+        android:paddingLeft="22dp"
+        android:text="蓝牙开锁"/>
+    <TextView
+        android:id="@+id/lock_auth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@drawable/auth_green_small"
+        android:textColor="@android:color/holo_green_dark"
+        android:drawablePadding="25dp"
+        android:paddingLeft="22dp"
+        android:text="申请授权"/>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dip"
+        android:background="@android:color/holo_green_dark" />
+    <Button
+        android:id="@+id/lock_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="关闭"
+        android:textColor="@android:color/holo_green_dark"
+        android:background="@android:color/transparent"/>
+
+</LinearLayout>
