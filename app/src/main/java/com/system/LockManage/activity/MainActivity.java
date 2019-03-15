@@ -1,6 +1,8 @@
 package com.system.LockManage.activity;
 
 import android.Manifest;
+import android.bluetooth.BluetoothAdapter;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -9,8 +11,11 @@ import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 import com.system.LockManage.R;
 import com.system.LockManage.fragment.AlarmFragment;
 import com.system.LockManage.fragment.AuthFragment;
@@ -18,8 +23,10 @@ import com.system.LockManage.fragment.DevicesFragment;
 import com.system.LockManage.fragment.LockFragment;
 import com.system.LockManage.fragment.LogFragment;
 import com.system.LockManage.fragment.MyFragment;
+import com.system.LockManage.util.BluetoothManager;
 import com.system.LockManage.view.TabLayout;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -42,13 +49,18 @@ public class MainActivity extends BaseActivity {
     private Map<Integer, Fragment> mFragmentMap ;
     private int[] mIconSelect = { R.mipmap.account_green,R.mipmap.key1_green, R.mipmap.unlock_green, R.mipmap.query_green,R.mipmap.auth_green,R.mipmap.compass_green};
     private int[] mIconNormal = { R.mipmap.account,R.mipmap.key1, R.mipmap.unlock, R.mipmap.query,R.mipmap.auth,R.mipmap.compass};
+    private ImageView QRCode ;
+    private ImageView Lanya ;
 
     @Override
     protected void initView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_main);
         setTitle(getString(R.string.title_wechat));
         setLeftBtnVisibility(View.GONE);
+
         mFragmentMap = new HashMap<>() ;
+        Lanya = findViewById(R.id.Lanya);
+        QRCode = findViewById(R.id.QRCode);
         mViewPager = (ViewPager)findViewById(R.id.activity_main_viewpager) ;
         mViewPager.setOffscreenPageLimit(6);
         mViewPager.setAdapter(new PageAdapter(getSupportFragmentManager()));
@@ -103,6 +115,34 @@ public class MainActivity extends BaseActivity {
         mTabView.setViewPager(mViewPager);//tablayout和viewpager联动
         List<PermissonItem> permissonItems = new ArrayList<PermissonItem>();
         permissonItems.add(new PermissonItem(Manifest.permission.ACCESS_FINE_LOCATION, "定位", R.drawable.permission_ic_location));
+
+
+        QRCode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // 创建IntentIntegrator对象
+                IntentIntegrator intentIntegrator = new IntentIntegrator(MainActivity.this);
+                // 开始扫描
+                intentIntegrator.initiateScan();
+
+            }
+        });
+
+        Lanya.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+             //声明一个class类
+           Class serviceManager = null;
+                BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
+                if (!adapter.isEnabled()) {
+                    adapter.enable();
+                }
+                Intent enable = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
+                enable.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 3600); //3600为蓝牙设备可见时间
+                startActivity(enable);
+                
+            }
+        });
 
         HiPermission.create(MainActivity.this)
                 .title("亲爱的用户")
@@ -188,5 +228,18 @@ public class MainActivity extends BaseActivity {
             return mTitle.length;
         }
     }
-
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // 获取解析结果
+        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        if (result != null) {
+            if (result.getContents() == null) {
+                Toast.makeText(this, "取消扫描", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(this, "扫描内容:" + result.getContents(), Toast.LENGTH_LONG).show();
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
 }
