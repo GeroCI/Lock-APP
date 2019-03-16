@@ -1,0 +1,4 @@
+#Fri Mar 15 21:48:15 CST 2019
+base.0=E\:\\androidproject\\LockManage\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex

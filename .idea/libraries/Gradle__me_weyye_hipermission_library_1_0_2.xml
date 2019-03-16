@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: me.weyye.hipermission:library-1.0.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-1.0.2.aar/3e5fe04bb8bfb8fa9d1f49d45a75afb9/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-1.0.2.aar/3e5fe04bb8bfb8fa9d1f49d45a75afb9/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/me.weyye.hipermission/library/1.0.2/9f49fdf4f7ef2fb58ad5a1e79d84625a760b192f/library-1.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
