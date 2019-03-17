@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_marginTop="8dp"
+        android:id="@+id/image_3"
+        android:layout_width="37dp"
+        android:layout_height="37dp"
+        android:src="@drawable/listview_auth"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/auth_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Auth_name"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/auth_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Auth_key"
+            android:textSize="12sp"
+            />
+        <TextView
+            android:id="@+id/auth_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Auth_time"
+            android:textSize="12sp"
+            />
+    </LinearLayout>
+</LinearLayout>
