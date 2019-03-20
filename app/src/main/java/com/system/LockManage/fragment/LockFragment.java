@@ -119,7 +119,7 @@ public class LockFragment extends Fragment {
 //                                Log.i("value_a",value_a);
                                 JSONObject jsonObject = new JSONObject(value_a.substring(value.indexOf("{"), value_a.lastIndexOf("}") + 1));
                                 int code = jsonObject.getInt("code");
-//                                Log.i("code", String.valueOf(code));
+                               Log.i("code", String.valueOf(code));
                                 if(code == 1) {
                                     jsonJX(jsonObject); ;
                                 }else{

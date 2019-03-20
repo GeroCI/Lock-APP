@@ -5,12 +5,17 @@ import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.bluetooth.BluetoothAdapter;
-import android.content.DialogInterface;
+import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothManager;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -32,26 +37,21 @@ import android.widget.Toast;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 import com.system.LockManage.R;
-import com.system.LockManage.bean.Key;
-import com.system.LockManage.bean.Onu;
 import com.system.LockManage.fragment.AlarmFragment;
 import com.system.LockManage.fragment.AuthFragment;
 import com.system.LockManage.fragment.DevicesFragment;
 import com.system.LockManage.fragment.LockFragment;
 import com.system.LockManage.fragment.LogFragment;
 import com.system.LockManage.fragment.MyFragment;
-import com.system.LockManage.util.BluetoothManager;
 import com.system.LockManage.util.DateUtil;
 import com.system.LockManage.util.DialogUtil;
+import com.system.LockManage.util.LocationUtil;
 import com.system.LockManage.view.TabLayout;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.io.IOException;
-import java.lang.reflect.Method;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -106,11 +106,18 @@ public class MainActivity extends BaseActivity {
     private EditText onu_Status;
     private EditText onu_rate;
     private String pattern = "yyyy-MM-dd HH:mm:ss";
+    private BluetoothAdapter mBluetoothAdapter;
+    private static final int REQUEST_ENABLE_BT = 2;
+
     @Override
     protected void initView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_main);
         setTitle(getString(R.string.title_wechat));
         setLeftBtnVisibility(View.GONE);
+
+
+
+
 
         mFragmentMap = new HashMap<>() ;
         Lanya = findViewById(R.id.Lanya);
@@ -169,8 +176,6 @@ public class MainActivity extends BaseActivity {
         mTabView.setViewPager(mViewPager);//tablayout和viewpager联动
         List<PermissonItem> permissonItems = new ArrayList<PermissonItem>();
         permissonItems.add(new PermissonItem(Manifest.permission.ACCESS_FINE_LOCATION, "定位", R.drawable.permission_ic_location));
-
-
         QRCode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -185,12 +190,8 @@ public class MainActivity extends BaseActivity {
         Lanya.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-                if (mBluetoothAdapter == null) {
-                    Toast.makeText(getApplicationContext(),"当前设备不支持蓝牙！",Toast.LENGTH_SHORT).show();
-                }
-                else
-                    mBluetoothAdapter.enable();//强制打开蓝牙
+                Intent intent = new Intent(MainActivity.this,BlueToothActivity.class);
+                startActivity(intent);
             }
         });
         HiPermission.create(MainActivity.this)
@@ -219,8 +220,6 @@ public class MainActivity extends BaseActivity {
                     public void onGuarantee(String permisson, int position) {
                     }
                 });
-
-
     }
 
     private Fragment getFragment(int position){
@@ -250,6 +249,7 @@ public class MainActivity extends BaseActivity {
         }
         return fragment ;
     }
+
 
     class PageAdapter extends FragmentPagerAdapter implements TabLayout.OnItemIconTextSelectListener{
 

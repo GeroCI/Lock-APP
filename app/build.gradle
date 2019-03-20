@@ -4,7 +4,7 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.system.LockManage"
-        minSdkVersion 15
+        minSdkVersion 18
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -13,7 +13,7 @@ android {
             variant ->
                 variant.outputs.all {
                     // 此处指定生成的apk文件名
-                    outputFileName = "LockManage.apk"
+                    outputFileName = "光交管理系统.apk"
                 }
         }
     }

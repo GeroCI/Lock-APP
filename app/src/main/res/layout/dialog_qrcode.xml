@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="10dp">
+            >
         <TextView
             android:id="@+id/onu_name"
             android:layout_width="wrap_content"
@@ -45,7 +45,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:layout_marginTop="10dp"
+
     >
     <TextView
         android:id="@+id/onu_belonger"
@@ -63,7 +63,6 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
         <TextView
@@ -96,7 +95,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="10dp">
+        >
     <TextView
     android:id="@+id/onu_inwareinfo"
     android:layout_width="wrap_content"
@@ -114,7 +113,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="10dp">
+        >
     <TextView
         android:id="@+id/onu_outwareinfo"
         android:layout_width="wrap_content"
@@ -131,7 +130,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="10dp">
+        >
     <TextView
         android:id="@+id/onu_lng"
         android:layout_width="wrap_content"
@@ -148,7 +147,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="10dp">
+          >
     <TextView
         android:id="@+id/onu_lat"
         android:layout_width="wrap_content"
@@ -165,7 +164,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="10dp">
+        >
     <TextView
     android:id="@+id/onu_status"
     android:layout_width="wrap_content"
@@ -182,7 +181,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="10dp">
+        >
     <TextView
         android:id="@+id/onu_Rate"
         android:layout_width="wrap_content"

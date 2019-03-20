@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ExtraTranslation">
-    <string name="app_name">LockManage</string>
+    <string name="app_name">光交箱管理系统</string>
 
     <string name="send">发送</string>
     <string name="edittext_input_hint">说啥类...</string>
