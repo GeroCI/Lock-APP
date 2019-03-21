@@ -44,9 +44,9 @@ public class BleService extends Service {
     // 服务标识
     private final UUID SERVICE_UUID = UUID.fromString("0000ace0-0000-1000-8000-00805f9b34fb");
     // 特征标识（读取数据）
-    private final UUID CHARACTERISTIC_READ_UUID = UUID.fromString("0000ace0-0001-1000-8000-00805f9b34fb");
+    private final UUID CHARACTERISTIC_READ_UUID = UUID.fromString("0000ff02-0000-1000-8000-00805f9b34fb");
     // 特征标识（发送数据）
-    private final UUID CHARACTERISTIC_WRITE_UUID = UUID.fromString("0000ace0-0003-1000-8000-00805f9b34fb");
+    private final UUID CHARACTERISTIC_WRITE_UUID = UUID.fromString("0000ff01-0000-1000-8000-00805f9b34fb");
     // 描述标识
     private final UUID DESCRIPTOR_UUID = UUID.fromString("00002902-0000-1000-8000-00805f9b34fb");
 

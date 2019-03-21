@@ -90,6 +90,11 @@ public class BlueToothActivity extends AppCompatActivity implements View.OnClick
                 Toast.makeText(BlueToothActivity.this, "开始连接", Toast.LENGTH_SHORT).show();
                 mBtAdapter.stopLeScan(mLeScanCallback);
                 mBleService.connect(mBtAdapter, mBluetoothDeviceList.get(position).getAddress());
+
+                String stringBind = "fafb070E111111111111111111111111E3";
+                byte hexbind[] = ByteUtils.hexStr2Byte(stringBind);
+                mBleService.sendData(hexbind);//发送绑定指令
+                String stringReadLock = "fafb070100";
             }
         });
     }

@@ -13,7 +13,7 @@ android {
             variant ->
                 variant.outputs.all {
                     // 此处指定生成的apk文件名
-                    outputFileName = "光交管理系统.apk"
+                    outputFileName = "光交箱管理系统.apk"
                 }
         }
     }
