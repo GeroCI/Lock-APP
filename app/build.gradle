@@ -50,4 +50,7 @@ dependencies {
     implementation files('libs/IndoorscapeAlbumPlugin.jar')
     implementation 'me.weyye.hipermission:library:1.0.2'
     implementation 'com.journeyapps:zxing-android-embedded:3.5.0'
+    implementation files('libs/msc.jar')
+    implementation files('libs/Sunflower.jar')
+    implementation 'com.android.support:design:27.1.1'
 }

@@ -6,19 +6,49 @@
     android:layout_height="match_parent">
 
     <include layout="@layout/toolbar" />
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="400dp"-->
+        <!--android:id="@+id/console"-->
+       />
+    <!--<LinearLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal">-->
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="绑定钥匙"-->
+            <!--android:id="@+id/bund"/>-->
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="初始化锁具"-->
+            <!--android:id="@+id/init_lock"/>-->
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="通信秘钥"-->
+            <!--android:id="@+id/communicationKey"/>-->
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="开门"-->
+            <!--android:id="@+id/OpenDoor"/>-->
 
+    <!--</LinearLayout>-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/white"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
         <android.support.v4.view.ViewPager
             android:id="@+id/activity_main_viewpager"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-
+            android:layout_weight="1" />
         <com.system.LockManage.view.TabLayout
             android:id="@+id/activity_main_tablayout"
             android:layout_width="match_parent"
@@ -31,5 +61,4 @@
             tablayout:item_padding="7dp"/>
 
     </LinearLayout>
-
 </LinearLayout>

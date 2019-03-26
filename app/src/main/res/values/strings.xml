@@ -35,4 +35,13 @@
     <!--<string name="title_pic_select">图片</string>-->
     <!--<string name="title_push_shuo">编辑说说</string>-->
     <string name="todo">TODO</string>
+    <string name="action_settings">设置</string>
+    <string name="ble_not_supported">蓝牙不支持</string>
+    <string name="select_device">选择设备</string>
+    <string name="scanning">扫描...</string>
+    <string name="scan">重新扫描</string>
+    <string name="cancel">取消扫描</string>
+    <string name="paired">已配对</string>
+    <string name="click_exit">再次点击退出</string>
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
 </resources>
