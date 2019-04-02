@@ -52,5 +52,5 @@ dependencies {
     implementation 'com.journeyapps:zxing-android-embedded:3.5.0'
     implementation files('libs/msc.jar')
     implementation files('libs/Sunflower.jar')
-    implementation 'com.android.support:design:27.1.1'
+
 }
